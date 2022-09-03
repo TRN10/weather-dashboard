@@ -12,3 +12,12 @@ h5 {
 h1 {
     text-align: center;
 }
+
+.btn {
+    background-color: orange;
+    border-color: orange;
+}
+
+i {
+    color: orange;
+}
