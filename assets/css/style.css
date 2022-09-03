@@ -1,4 +1,7 @@
 h1,
+h2,
+h3,
+h4,
 h5 {
     font-family: suez one, sans-serif;
 }
@@ -12,13 +15,21 @@ h5 {
 h1 {
     text-align: center;
     font-kerning: none;
+
 }
 
 .btn {
     background-color: orange;
     border-color: orange;
+    font-family: suez one, sans-serif;
+
 }
 
 i {
+    color: orange;
+}
+
+h3 {
+
     color: orange;
 }
