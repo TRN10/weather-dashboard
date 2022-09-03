@@ -2,3 +2,13 @@ h1,
 h5 {
     font-family: suez one, sans-serif;
 }
+
+.row {
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+h1 {
+    text-align: center;
+}
