@@ -1,12 +1,18 @@
-var submitEl = document.querySelector("#submit");
 var locationName = document.querySelector("#location-name");
+var submitButton = document.querySelector("#submit");
 
-function submitResponse(event) {
-    event.preventDefault();
-    document.querySelector("#location").textContent = locationName;
-
-
-}
 
 // Add event listener to submit search location
-submitEl.addEventListener("click", submitResponse);
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    //create var from submission
+    var nameOfLocation = locationName.value.trim();
+
+    //save to local storage
+    localStorage.setItem("nameOfLocation", JSON.stringify(nameOfLocation));
+    console.log(nameOfLocation);
+});
+
+
+
