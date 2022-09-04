@@ -19,10 +19,10 @@ submitButton.addEventListener("click", function (event) {
 
 });
 
-
+// function created to see what data is returned from API
 
 function getApi() {
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=tumut&appid=df6dd1cd15022b8002c172b01cde8380'
+    var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=sydney&appid=df6dd1cd15022b8002c172b01cde8380&units=metric'
 
     fetch(requestUrl)
         .then(function (response) {
