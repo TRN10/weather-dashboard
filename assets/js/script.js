@@ -13,8 +13,8 @@ submitButton.addEventListener("click", function (event) {
     localStorage.setItem("nameOfLocation", JSON.stringify(nameOfLocation));
     console.log(nameOfLocation);
 
-    //render name of location searched on screen
-    document.querySelector("#location").textContent = nameOfLocation;
+    //render name of location searched on screen and capitalise first letter
+    document.querySelector("#location").textContent = nameOfLocation[0].toUpperCase() + nameOfLocation.substring(1);
 
     function getApi() {
         var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + nameOfLocation + '&appid=df6dd1cd15022b8002c172b01cde8380&units=metric';
@@ -30,24 +30,8 @@ submitButton.addEventListener("click", function (event) {
 
     getApi();
 
-
+    //document.querySelector("#location-name").textContent = " ";
 
 });
 
-// function created to see what data is returned from API
 
-
-
-
-// var getWeather = function(city = nameOfLocation) {
-//     var apiUrl =  'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=df6dd1cd15022b8002c172b01cde8380&units=metric';
-//     fetch(apiUrl)
-//     .then(function (response) {
-//         if(response.ok) {
-//             response.json().then(function (data) {
-//                 console.log(data);
-
-//             });
-//         }
-//     })
-// }
