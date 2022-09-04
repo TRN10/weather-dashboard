@@ -12,6 +12,9 @@ submitButton.addEventListener("click", function (event) {
     //save to local storage
     localStorage.setItem("nameOfLocation", JSON.stringify(nameOfLocation));
     console.log(nameOfLocation);
+
+    //display name of location searched on screen
+    document.querySelector("#location").textContent = nameOfLocation;
 });
 
 
