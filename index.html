@@ -17,22 +17,26 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4"><i class="fa-solid fa-cloud"></i> weather dashboard</h1>
+    <header>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><i class="fa-solid fa-cloud"></i> weather dashboard</h1>
 
+            </div>
         </div>
-    </div>
+    </header>
     <div class="row">
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">search location</h2>
+                    <form>
+                        <input placeholder="location name" id="location-name" />
 
-                    <input type="text" id="name" name="name" required minlength="1" maxlength="85" size="20">
-                    <br>
+                        <button id="submit">Submit</button>
 
-                    <a href="#" class="btn btn-primary">search</a>
+                    </form>
+
                 </div>
             </div>
             <br>
@@ -61,6 +65,10 @@
         </div>
     </div>
 
+    <hr>
+    <footer>
+        <h6>powered by Openweather</h6>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 

@@ -10,6 +10,7 @@ h5 {
     padding-left: 30px;
     padding-right: 30px;
 
+
 }
 
 h1 {
@@ -18,10 +19,11 @@ h1 {
 
 }
 
-.btn {
+#submit {
     background-color: orange;
     border-color: orange;
     font-family: suez one, sans-serif;
+    margin-top: 20px;
 
 }
 
@@ -32,4 +34,8 @@ i {
 h3 {
 
     color: orange;
+}
+
+footer {
+    text-align: center;
 }
