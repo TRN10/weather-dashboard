@@ -39,3 +39,15 @@ h2 {
 footer {
     text-align: center;
 }
+
+.hide {
+    display: none;
+}
+
+.secondaryContainer {
+    display: flex;
+}
+
+.sideBar {
+    padding-left: 50px;
+}

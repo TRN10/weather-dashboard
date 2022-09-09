@@ -2,6 +2,7 @@ var locationName = document.querySelector("#location-name");
 var submitButton = document.querySelector("#submit");
 
 
+
 // Add event listener to submit search location
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -26,6 +27,7 @@ submitButton.addEventListener("click", function (event) {
             .then(function (data) {
                 console.log(data)
             });
+
     }
 
     getApi();

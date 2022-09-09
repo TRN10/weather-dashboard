@@ -18,52 +18,60 @@
 
 <body>
     <header>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4"><i class="fa-solid fa-cloud"></i> weather dashboard</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron jumbotron-fluid">
 
+                        <h1 class="display-4"><i class="fa-solid fa-cloud"></i> weather dashboard</h1>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">search location</h3>
-                    <form>
-                        <input type="text" name="location-name" id="location-name" placeholder="search location" />
 
-                        <button id="submit">Search</button>
+    <main class="mainContainer">
+        <div class="secondaryContainer">
+            <aside class="sideBar">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title search">search location</h3>
+                        <form>
+                            <input type="text" name="location-name" id="location-name"
+                                placeholder="  enter search location" />
 
-                    </form>
+                            <button id="submit">search</button>
 
+                        </form>
+
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">previous searches</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">previous searches</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
+                    </div>
                 </div>
-            </div>
+            </aside>
+            <section class="col-md-9 mainColumn">
+                <div class="card">
+                    <h2 class="card-header"><span id="location"><i class="fa-solid fa-cloud"></i></span></h2>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <h3 class="card-header">5 day forecast</h3>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="col-sm-9">
-            <div class="card">
-                <h2 class="card-header"><span id="location"></span></h2>
-                <div class="card-body">
-
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <h4 class="card-header">5 day forecast</h4>
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <hr>
     <footer>
