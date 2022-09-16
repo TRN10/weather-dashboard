@@ -24,6 +24,7 @@ h1 {
     border-color: orange;
     font-family: suez one, sans-serif;
     margin-top: 20px;
+    color: white;
 
 }
 
@@ -44,7 +45,7 @@ footer {
     display: none;
 }
 
-.secondaryContainer {
+.secondary-container {
     display: flex;
 }
 
