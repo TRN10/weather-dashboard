@@ -5,9 +5,10 @@ Weather dashboard is an application which uses an API to draw weather informatio
 
 This challenge focused on the use of third-party APIs, using fetch commands, and dynamically rendering the results into the DOM using JavaScript. In this challenge I learned how data that is fetched using an API is carried through the functions that follow. I also used day.js for the first time. I underestimated the amount of work required to make the previous searches card populate with buttons dynamically rendered from the search history using local storage, so unfortunately the 'previous searches' part of the application is not functional.
 
-Following is a screenshot of the application:
+Following are screenshots of the application:
 
 ![weather-dashboard-screenshot](assets/images/weather-dashboard-screenshot.png)
+![weather-dashboard-screenshot](assets/images/weather-dashboard-screenshot-2.png)
 
 This is a link to the deployed application:
 
