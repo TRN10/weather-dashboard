@@ -150,7 +150,9 @@ function currentWeather(city, weather, timezone) {
 // var for start and var for end for loop on daily forecast array, create function called forecast card and call out in for loop
 
 function forecastWeather(daily, timezone) {
+
     // create time zone for forecast
+
     var startDay = dayjs().tz(timezone).add(1, "day").startOf("day").unix();
     var endDay = dayjs().tz(timezone).add(6, "day").startOf("day").unix();
 
@@ -173,38 +175,42 @@ function forecastWeather(daily, timezone) {
     }
 }
 
+// function to create and render 5 day forecast
+
 function forecastCard(forecast, timeZone) {
+
     var unixTs = forecast.dt;
     var iconUrl = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
     var iconDescription = forecast.weather[0].description;
-    var tempc = forecast.temp.day;
+    var tempC = forecast.temp.day;
     var { humidity } = forecast;
     var windkph = forecast.wind_speed;
     var col = document.createElement("div");
     var card = document.createElement("div");
     var cardBody = document.createElement("div");
-    var cardtitle = document.createElement("h5");
-    var weathericon = document.createElement("img");
+    var cardTitle = document.createElement("h5");
+    var weatherIcon = document.createElement("img");
     var tempEl = document.createElement("p");
     var windEl = document.createElement("p");
     var humidityEl = document.createElement("p");
+
     col.append(card);
     card.append(cardBody);
-    cardBody.append(cardtitle, weathericon, tempEl, windEl, humidityEl);
+    cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
     col.setAttribute("class", "col-md");
     col.classList.add("5-day-card");
-    card.setAttribute("class", "card bg-primary h-100 text-white");
+    card.setAttribute("class", "card bg-primary h-100 text-black");
     cardBody.setAttribute("class", "card-body p-2");
-    cardtitle.setAttribute("class", "card-title");
+    cardTitle.setAttribute("class", "card-title");
     tempEl.setAttribute("class", "card-text");
     windEl.setAttribute("class", "card-text");
     humidityEl.setAttribute("class", "card-text");
 
-    cardtitle.textContent = dayjs.unix(unixTs).tz(timeZone).format("ddd D MMM");
-    weathericon.setAttribute("src", iconUrl);
-    weathericon.setAttribute("alt", iconDescription);
+    cardTitle.textContent = dayjs.unix(unixTs).tz(timeZone).format("D/M/YYYY'");
+    weatherIcon.setAttribute("src", iconUrl);
+    weatherIcon.setAttribute("alt", iconDescription);
+    tempEl.textContent = `Temp: ${tempC}°C`;
     windEl.textContent = `Wind: ${windkph} km/h`;
     humidityEl.textContent = `Humidity: ${humidity}%`;
-    tempEl.textContent = `Temp: ${tempc}°C`;
     forecastContainer.append(col);
 }
