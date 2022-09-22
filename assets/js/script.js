@@ -2,6 +2,7 @@ var locationName = document.querySelector("#location-name");
 var submitButton = document.querySelector("#submit");
 var todayContainer = document.getElementById('today');
 var forecastContainer = document.getElementById('forecast');
+var forecastEl = document.getElementById('forecast-heading');
 
 var apiKey = "2a2c6d77334d26a9c34ac000ab9a9fe8";
 var api = "https://api.openweathermap.org";
@@ -84,6 +85,7 @@ function getWeather(location) {
 function sharedData(city, data) {
     currentWeather(city, data.current, data.timezone);
     forecastWeather(data.daily, data.timezone);
+
 }
 
 
@@ -150,24 +152,28 @@ function currentWeather(city, weather, timezone) {
 // var for start and var for end for loop on daily forecast array, create function called forecast card and call out in for loop
 
 function forecastWeather(daily, timezone) {
-
+    console.log(daily);
     // create time zone for forecast
 
     var startDay = dayjs().tz(timezone).add(1, "day").startOf("day").unix();
     var endDay = dayjs().tz(timezone).add(6, "day").startOf("day").unix();
 
-    var forecastCol = document.createElement('div');
-    var heading = document.createElement('h4');
+    // var forecastRow = document.createElement('div');
+    // var forecastCol = document.createElement('div');
+    // var heading = document.createElement('h4');
 
-    forecastCol.setAttribute('class', 'col-12');
-    heading.classList.add('row-white');
-    heading.textContent = '5 day forecast';
-    forecastCol.append(heading);
+    // forecastRow.setAttribute('class', 'row');
+    // forecastCol.setAttribute('class', 'col-12');
+    // heading.classList.add('row-white');
+    // heading.textContent = '5 day forecast';
+    // forecastCol.append(heading);
+    // forecastRow.append(forecastCol);
 
 
     forecastContainer.innerHTML = "";
 
-    forecastContainer.append(forecastCol);
+    // forecastContainer.append(forecastRow);
+
     for (let i = 0; i < daily.length; i++) {
         if (daily[i].dt >= startDay && daily[i].dt < endDay) {
             forecastCard(daily[i], timezone);
@@ -178,6 +184,7 @@ function forecastWeather(daily, timezone) {
 // function to create and render 5 day forecast
 
 function forecastCard(forecast, timeZone) {
+    console.log(forecast,)
 
     var unixTs = forecast.dt;
     var iconUrl = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
@@ -197,9 +204,9 @@ function forecastCard(forecast, timeZone) {
     col.append(card);
     card.append(cardBody);
     cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
-    col.setAttribute("class", "col-md");
+    col.setAttribute("class", "col-md-2       ");
     col.classList.add("5-day-card");
-    card.setAttribute("class", "card bg-primary h-100 text-black");
+    card.setAttribute("class", "card bg-white h-100 text-black");
     cardBody.setAttribute("class", "card-body p-2");
     cardTitle.setAttribute("class", "card-title");
     tempEl.setAttribute("class", "card-text");
@@ -213,4 +220,5 @@ function forecastCard(forecast, timeZone) {
     windEl.textContent = `Wind: ${windkph} km/h`;
     humidityEl.textContent = `Humidity: ${humidity}%`;
     forecastContainer.append(col);
+    forecastEl.classList.remove('hide');
 }
