@@ -60,7 +60,7 @@ function getCity(nameOfLocation) {
         });
 
 }
-
+// function to get current weather using lat and long from getCity function
 function getWeather(location) {
     var { lat, lon } = location;
     var city = location.name;
@@ -149,7 +149,6 @@ function currentWeather(city, weather, timezone) {
     todayContainer.append(card);
 }
 // forecastWeather to create, midnight to midgnight start to end date
-// var for start and var for end for loop on daily forecast array, create function called forecast card and call out in for loop
 
 function forecastWeather(daily, timezone) {
     console.log(daily);
@@ -158,16 +157,6 @@ function forecastWeather(daily, timezone) {
     var startDay = dayjs().tz(timezone).add(1, "day").startOf("day").unix();
     var endDay = dayjs().tz(timezone).add(6, "day").startOf("day").unix();
 
-    // var forecastRow = document.createElement('div');
-    // var forecastCol = document.createElement('div');
-    // var heading = document.createElement('h4');
-
-    // forecastRow.setAttribute('class', 'row');
-    // forecastCol.setAttribute('class', 'col-12');
-    // heading.classList.add('row-white');
-    // heading.textContent = '5 day forecast';
-    // forecastCol.append(heading);
-    // forecastRow.append(forecastCol);
 
 
     forecastContainer.innerHTML = "";
@@ -213,7 +202,7 @@ function forecastCard(forecast, timeZone) {
     windEl.setAttribute("class", "card-text");
     humidityEl.setAttribute("class", "card-text");
 
-    cardTitle.textContent = dayjs.unix(unixTs).tz(timeZone).format("D/M/YYYY'");
+    cardTitle.textContent = dayjs.unix(unixTs).tz(timeZone).format("D/M/YYYY");
     weatherIcon.setAttribute("src", iconUrl);
     weatherIcon.setAttribute("alt", iconDescription);
     tempEl.textContent = `Temp: ${tempC}°C`;
