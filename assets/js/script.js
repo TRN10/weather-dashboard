@@ -205,6 +205,6 @@ function forecastCard(forecast, timeZone) {
     weathericon.setAttribute("alt", iconDescription);
     windEl.textContent = `Wind: ${windkph} km/h`;
     humidityEl.textContent = `Humidity: ${humidity}%`;
-    tempEl.textContent = `Temp: ${tempc}°C`
+    tempEl.textContent = `Temp: ${tempc}°C`;
     forecastContainer.append(col);
 }
